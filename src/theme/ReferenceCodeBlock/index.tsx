@@ -9,11 +9,8 @@ import type { ReferenceCodeBlockProps } from '../types'
 
 const buttonBarStyles: React.CSSProperties = {
     fontSize: '.9em',
-    fontWeight: 600,
     color: '#0E75DD',
     textAlign: 'right',
-    paddingBottom: '13px',
-    textDecoration: 'underline'
 }
 
 function ReferenceCode(props: ReferenceCodeBlockProps) {
@@ -34,6 +31,7 @@ function ReferenceCode(props: ReferenceCodeBlockProps) {
             ? `${props.metastring} title="${titleMatch?.groups?.title}"`
             : `${props.metastring} title="${codeSnippetDetails.title}"`,
         children: initialFetchResultState.code,
+        githubLink: props.children,
     };
 
     const codeblockConfig = useCodeblockThemeConfig()
